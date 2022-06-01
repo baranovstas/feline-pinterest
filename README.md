@@ -22,6 +22,7 @@
 - JavaScript
 - Axios
 - SCSS
+- localStorage
 - CSS Modules
 - gh-pages
 - The Cat API
