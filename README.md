@@ -1,6 +1,6 @@
 <div id="top"></div>
 
-# Feline pinterest
+# Кошачий пинтерест
 
 Ссылка на приложение - [https://baranovstas.github.io/feline-pinterest/](https://baranovstas.github.io/feline-pinterest/)
 
