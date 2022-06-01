@@ -27,7 +27,7 @@ const fetchCats = createAsyncThunk(
 
 const initialState = {
   cats: [],
-  likedCats: [],
+  likedCats: JSON.parse(localStorage.getItem('likedCats')) || [],
   initialized: false,
   isFetching: false,
   totalPagesCount: 0,
@@ -42,6 +42,8 @@ const reducers = {
     const index = likedCats.indexOf(id);
 
     likedCats.includes(id) ? state.likedCats.splice(index, 1) : state.likedCats.push(id);
+
+    localStorage.setItem('likedCats', JSON.stringify(state.likedCats));
   },
 
   updatePage(state) {
