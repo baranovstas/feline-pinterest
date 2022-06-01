@@ -18,10 +18,10 @@ const CatsList = () => {
 
   const { pathname } = useLocation();
 
-  const isAllCatsPath = pathname === '/allCats';
+  const isHomePage = pathname === '/';
 
   useEffect(() => {
-    if (isAllCatsPath) {
+    if (isHomePage) {
       document.addEventListener('scroll', handleScroll);
       return () => document.removeEventListener('scroll', handleScroll);
     }
@@ -37,12 +37,12 @@ const CatsList = () => {
     }
   };
 
-  if (isFetching && !initialized) {
+  if (isFetching && !initialized && isHomePage) {
     return <Spinner />;
   }
 
   if (!isFetching && initialized) {
-    const displayedCats = isAllCatsPath ? transformedCats : transformedCats.filter(item => item.isLiked);
+    const displayedCats = isHomePage ? transformedCats : transformedCats.filter(item => item.isLiked);
 
     return <View cats={displayedCats} />;
   }
@@ -58,8 +58,8 @@ const CatsList = () => {
 
 const View = ({ cats }) => (
   <ul className={catsListClasses.cats}>
-    {cats.map(({ id, ...item }, index) => (
-      <CatItem index={index + 1} key={id} id={id} {...item} />
+    {cats.map(({ id, ...item }) => (
+      <CatItem key={id} id={id} {...item} />
     ))}
   </ul>
 );

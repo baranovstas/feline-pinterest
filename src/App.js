@@ -1,5 +1,5 @@
 import { Provider } from 'react-redux';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import CatsList from './components/CatsList/CatsList';
 import Header from './components/Header/Header';
@@ -11,7 +11,7 @@ import './index.scss';
 
 const App = () => (
   <Provider store={store}>
-    <BrowserRouter>
+    <HashRouter>
       <div className="App">
         <Header />
         <main>
@@ -19,10 +19,6 @@ const App = () => (
             <Routes>
               <Route
                 path="/"
-                element={<Navigate to="/allCats" />}
-              />
-              <Route
-                path="/allCats"
                 element={<CatsList />}
               />
               <Route
@@ -33,7 +29,7 @@ const App = () => (
           </Section>
         </main>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   </Provider>
 );
 

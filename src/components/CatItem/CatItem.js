@@ -4,11 +4,11 @@ import { toggleLike } from '../../store/reducers/catsSlice';
 
 import catsItemClasses from './CatItem.module.scss';
 
-const CatItem = ({ id, url, isLiked, index }) => {
+const CatItem = ({ id, url, isLiked }) => {
   const dispatch = useDispatch();
 
   return (
-    <li tabIndex={index} className={catsItemClasses.cat}>
+    <li className={catsItemClasses.cat}>
       <img
         className={catsItemClasses.image}
         src={url}

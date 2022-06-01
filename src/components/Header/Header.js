@@ -4,7 +4,7 @@ import headerClasses from './Header.module.scss';
 
 const Header = () => {
   const links = [
-    { link: 'Все котики', path: '/allCats' },
+    { link: 'Все котики', path: '/' },
     { link: 'Любимые котики', path: '/likedCats' }
   ];
 
