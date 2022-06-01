@@ -32,7 +32,6 @@ const initialState = {
   isFetching: false,
   totalPagesCount: 0,
   page: 0,
-  error: '',
 };
 
 const reducers = {
@@ -66,13 +65,6 @@ const extraReducers = builder => {
         state.isFetching = false;
         state.initialized = true;
         state.totalPagesCount = totalPagesCount;
-      }
-    )
-    .addCase(
-      fetchCats.rejected,
-      (state, { payload: errorMessage }) => {
-        state.isFetching = false;
-        state.error = errorMessage;
       }
     )
 }
