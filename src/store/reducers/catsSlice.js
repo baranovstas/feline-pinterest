@@ -16,7 +16,7 @@ const fetchCats = createAsyncThunk(
         return { data, totalPagesCount };
       }
       else if (status >= 400 && status <= 599) {
-        throw new Error('Error');
+        throw new Error('dasdads');
       }
     }
     catch ({ message }) {
@@ -32,6 +32,7 @@ const initialState = {
   isFetching: false,
   totalPagesCount: 0,
   page: 0,
+  error: '',
 };
 
 const reducers = {
@@ -65,6 +66,12 @@ const extraReducers = builder => {
         state.isFetching = false;
         state.initialized = true;
         state.totalPagesCount = totalPagesCount;
+      }
+    )
+    .addCase(
+      fetchCats.rejected,
+      (state, { payload: errorMessage }) => {
+        state.error = errorMessage;
       }
     )
 }
