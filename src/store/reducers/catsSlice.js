@@ -16,7 +16,7 @@ const fetchCats = createAsyncThunk(
         return { data, totalPagesCount };
       }
       else if (status >= 400 && status <= 599) {
-        throw new Error('dasdads');
+        throw new Error('Error');
       }
     }
     catch ({ message }) {
