@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/feline-pinterest/static/css/main.2c484d96.css",
-    "main.js": "/feline-pinterest/static/js/main.1e45c315.js",
+    "main.js": "/feline-pinterest/static/js/main.fe26ab96.js",
     "static/media/error.gif": "/feline-pinterest/static/media/error.42292aa12b6bc303ce99.gif",
     "index.html": "/feline-pinterest/index.html",
     "main.2c484d96.css.map": "/feline-pinterest/static/css/main.2c484d96.css.map",
-    "main.1e45c315.js.map": "/feline-pinterest/static/js/main.1e45c315.js.map"
+    "main.fe26ab96.js.map": "/feline-pinterest/static/js/main.fe26ab96.js.map"
   },
   "entrypoints": [
     "static/css/main.2c484d96.css",
-    "static/js/main.1e45c315.js"
+    "static/js/main.fe26ab96.js"
   ]
 }
