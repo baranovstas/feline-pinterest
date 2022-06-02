@@ -12,7 +12,7 @@ import catsListClasses from './CatsList.module.scss';
 
 const CatsList = () => {
   const transformedCats = useSelector(state => selectTransformedCats(state));
-  const { page, initialized, isFetching } = useSelector(({ cats }) => cats);
+  const { page, initialized, isFetching, likedCats } = useSelector(({ cats }) => cats);
 
   const dispatch = useDispatch();
 
@@ -42,7 +42,7 @@ const CatsList = () => {
   }
 
   if (!isFetching && initialized) {
-    const displayedCats = isHomePage ? transformedCats : transformedCats.filter(item => item.isLiked);
+    const displayedCats = isHomePage ? transformedCats : likedCats.map(item => ({ ...item, isLiked: true }));
 
     return <View cats={displayedCats} />;
   }

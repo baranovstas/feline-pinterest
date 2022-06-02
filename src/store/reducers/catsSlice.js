@@ -36,12 +36,12 @@ const initialState = {
 };
 
 const reducers = {
-  toggleLike(state, { payload: id }) {
+  toggleLike(state, { payload: cat }) {
     const { likedCats } = state;
 
-    const index = likedCats.indexOf(id);
+    const index = likedCats.findIndex(item => item.id === cat.id);
 
-    likedCats.includes(id) ? state.likedCats.splice(index, 1) : state.likedCats.push(id);
+    index !== -1 ? state.likedCats.splice(index, 1) : state.likedCats.push(cat);
 
     localStorage.setItem('likedCats', JSON.stringify(state.likedCats));
   },

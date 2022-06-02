@@ -10,7 +10,7 @@ const selectTransformedCats = createSelector(
   (cats, likedCats) => cats.map(({ id, url }) => ({
     id,
     url,
-    isLiked: likedCats.includes(id)
+    isLiked: likedCats.findIndex(item => item.id === id) !== -1
   }))
 );
 

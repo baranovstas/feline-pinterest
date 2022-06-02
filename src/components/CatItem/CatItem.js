@@ -15,7 +15,7 @@ const CatItem = ({ id, url, isLiked }) => {
         alt="Изображение котика"
       />
       <button
-        onClick={() => dispatch(toggleLike(id))}
+        onClick={() => dispatch(toggleLike({ id, url }))}
         className={`${catsItemClasses.button} ${isLiked && catsItemClasses.button_active}`}
         type='button'
         aria-label="Лайкнуть котика"
