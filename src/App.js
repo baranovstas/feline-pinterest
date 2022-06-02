@@ -19,30 +19,32 @@ const App = () => (
 const View = () => {
   const error = useSelector(({ cats: { error } }) => error);
 
-  if (error) {
-    return <ErrorMessage errorMessage={error} />;
-  }
-
   return (
-    <HashRouter>
-      <div className="App">
-        <Header />
-        <main>
-          <Section className="hero" title="Список котиков">
-            <Routes>
-              <Route
-                path="/"
-                element={<CatsList />}
-              />
-              <Route
-                path="/likedCats"
-                element={<CatsList />}
-              />
-            </Routes>
-          </Section>
-        </main>
-      </div>
-    </HashRouter>
+    <>
+      {
+        error ?
+          <ErrorMessage errorMessage={error} /> :
+          <HashRouter>
+            <div className="App">
+              <Header />
+              <main>
+                <Section className="hero" title="Список котиков">
+                  <Routes>
+                    <Route
+                      path="/"
+                      element={<CatsList />}
+                    />
+                    <Route
+                      path="/likedCats"
+                      element={<CatsList />}
+                    />
+                  </Routes>
+                </Section>
+              </main>
+            </div>
+          </HashRouter>
+      }
+    </>
   );
 }
 
