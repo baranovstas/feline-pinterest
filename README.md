@@ -2,7 +2,7 @@
 
 # Кошачий пинтерест
 
-Ссылка на приложение - [https://baranovstas.github.io/feline-pinterest/](https://baranovstas.github.io/feline-pinterest/)
+Ссылка на приложение - [https://anvaslist.github.io/feline-pinterest/](https://anvaslist.github.io/feline-pinterest/)
 
 ## О проекте
 
